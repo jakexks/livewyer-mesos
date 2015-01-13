@@ -18,4 +18,4 @@ do
     break
   fi
 done
-docker -H fd:///docker.sock run --rm -i --name=mesos_master --privileged --net=host mesosphere/mesos-master:0.20.1 --ip=$ZK --zk=zk://$ZK:2181/mesos --work_dir=/var/lib/mesos/master --quorum=1
+docker -H unix:///docker.sock run --rm -i --name=mesos_master --privileged --net=host mesosphere/mesos-master:0.20.1 --ip=$ZK --zk=zk://$ZK:2181/mesos --work_dir=/var/lib/mesos/master --quorum=1
